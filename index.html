@@ -1,46 +1,44 @@
 <!doctype html>
-
 <html>
 <head>
-  <meta charset="utf-8">
-  <title>HTML Example</title>
-  
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/about.css">
+    <title>horoscope belline</title>
+    <script>
+    let randomIndexArray = []    
+    function setFirst() {
+        setCard();
+        document.getElementById("img1").src = "./images/"+randomNum+'.png';
+    }   
+    function setSecond() {
+        setCard();
+        document.getElementById("img2").src = "./images/"+randomNum+'.png';
+    }
+    function setThird() {
+        setCard();
+        document.getElementById("img3").src = "./images/"+randomNum+'.png';
+    }
+    function setCard() {
+        randomNum = Math.floor(Math.random() * 53)
+            for (i=0; i<1; i++) {
+            randomNum = Math.floor(Math.random() * 53)
+            if (randomIndexArray.indexOf(randomNum) === -1) {
+                randomIndexArray.push(randomNum)
+            } else {
+                i--;
+            }
+        }
+        console.log(randomNum);
+    }        
+    </script>
 </head>
-<body>
-  <section class="center">
-    <aside class="sidebar"></aside>
-    
-    <section class="contents">
-      <!-- page will be include here -->
-      <section id="page" class="page">
-        <section id="about">
-          <section class="frame">
-            <h2><b>HELLO</b>WORLD</h2>
-            
-            <div class="cat">
-              <div class="picture">
-                <img src="images/mew.png" alt="Mew">
-              </div>
-              <small>Mew</small>
-            </div>
-            <div class="cat">
-              <div class="picture">
-                <img src="images/siesta.png" alt="Siesta">
-              </div>
-              <small>Siesta</small>
-            </div>
-            <div class="cat">
-              <div class="picture">
-                <img src="images/tiger.png" alt="Tiger">
-              </div>
-              <small>Tiger</small>
-            </div>
-          </section>
-        </section>
-      </section>
-    </section>
-  </section>
-</body>
+    <div>
+        <span class="1st"><img src="http://placehold.it/200x320" id="img1"/></span>
+        <span class="2nd"><img src="http://placehold.it/200x320" id="img2"/></span>
+        <span class="3rd"><img src="http://placehold.it/200x320" id="img3"/></span>
+    </div>
+    <div>
+        <button type="button" onclick="setFirst();">1st card pick</button>
+        <button type="button" onclick="setSecond();">2nd card pick</button>
+        <button type="button" onclick="setThird();">3nd card pick</button>
+        <button type="button" onclick="location.reload();">clear all!</button>
+    </div>
 </html>
